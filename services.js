@@ -49,20 +49,22 @@ function lowercaseFilter(tokens) {
 }
 
 function intersection(a, b) {
-        const maxLen = Math.min(a.length, b.length);
-        const r = new Set();
+        const maxLen = Math.max(a.length, b.length);
+        const r = [];
         let i = 0, j = 0;
+
         while (i < a.length && j < b.length) {
                 if (a[i] < b[j]) {
                         i++;
                 } else if (a[i] > b[j]) {
                         j++;
                 } else {
-                        r.add(a[i]);
+                        r.push(a[i]);
                         i++;
                         j++;
                 }
         }
+
         return r;
 }
 

@@ -52,6 +52,7 @@ const { Movie, GetTokens, intersection } = require("./services");
                                 Promise.all(promises)
                                         .then((lists) => {
                                                 for (let i = 0; i < lists.length; i++) {
+                                                        console.log(lists[i]);
                                                         if (intersectionArray.length === 0) {
                                                                 intersectionArray = lists[i];
                                                         } else {
